@@ -1,11 +1,5 @@
-"""
-This file contains an incomplete function definition.  
-Your task is to complete the incomplete function definition. so that it behaves as indicated in the documentation.
 
-Do not run this file directly.
-Rather, call this function from main.py and run that file.
-"""
-
+import random
 
 def guess_number(low, high, num_attempts):
     """
@@ -24,3 +18,25 @@ def guess_number(low, high, num_attempts):
     :param num_attempts: The number of attempts the user is given to guess the correct number.
     :returns: True if the user answers any attempt correctly, False otherwise.
     """
+    # Generate random number
+    secret_num = random.randint(low, high)
+    # Print game info
+def guess_number(low, high, num_attempts):
+    secret = random.randint(low, high)
+    print(f"Guess a number between {low} and {high}. You have {num_attempts} attempts.")
+    
+    for _ in range(num_attempts):
+        user_input = input("Enter your guess: ")
+        try:
+            guess = int(user_input)
+        except ValueError:
+            # 非数字直接算作错误，继续下一轮
+            continue
+        
+        if guess == secret:
+            return True
+    # 用尽所有机会
+    return False
+
+
+
